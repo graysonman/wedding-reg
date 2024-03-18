@@ -1,18 +1,20 @@
-// app/index.page.js
 'use client'
 import { useClientEffect } from 'next/client';
 import React, { useState } from 'react';
-import axios from 'axios';
-import RSVPForm from '../components/RSVPForm';
-import RegistryItem from '../components/RegistryItem';
+import RSVPForm from '../../components/RSVPForm';
+import RegistryItem from '../../components/RegistryItem';
 
 export default function Page() {
   const [registryItems, setRegistryItems] = useState([]);
 
-  useClientEffect(() => { // This replaces useEffect for client-side only effects
+  useClientEffect(() => {
     const fetchRegistryItems = async () => {
       try {
-        const { data } = await axios.get('/api/registry-items');
+        const response = await fetch('./api/regItems.js');
+        if (!response.ok) {
+          throw new Error(`Error: ${response.statusText}`);
+        }
+        const data = await response.json();
         setRegistryItems(data);
       } catch (error) {
         console.error('Error fetching registry items:', error);
