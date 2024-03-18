@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import RSVPForm from '../../components/RSVPForm';
-import RegistryItem from '../../components/RegistryItem';
+import RSVPForm from './components/RSVPForm';
+import RegistryItem from './components/RegistryItem';
 
 
 export default function Page() {
@@ -10,7 +10,7 @@ export default function Page() {
   useEffect(() => {
     const fetchRegistryItems = async () => {
       try {
-        const response = await fetch('./api/regItems.jsx');
+        const response = await fetch('/api/registry');
         if (!response.ok) {
           throw new Error(`Error: ${response.statusText}`);
         }

@@ -1,9 +1,9 @@
-import prisma from '../../../lib/prisma';
+import prisma from '../../../../lib/prisma';
 
 export default async function handler(req, res) {
   if (req.method === 'GET') {
     try {
-      const registryItems = await prisma.Registry.findMany();
+      const registryItems = await prisma.registry.findMany();
       res.status(200).json(registryItems);
     } catch (error) {
       res.status(500).json({ message: 'Error retrieving registry items', error: error.message });
@@ -13,7 +13,7 @@ export default async function handler(req, res) {
     try {
       const registryItem = await prisma.registry.update({
         where: { id },
-        data: { famBought, bought: true }, // Set 'bought' to true when item is purchased
+        data: { famBought, bought: true }, 
       });
       res.status(200).json(registryItem);
     } catch (error) {

@@ -1,10 +1,10 @@
-import prisma from '../../../lib/prisma';
+import prisma from '../../../../lib/prisma';
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { name, pplCount } = req.body;
     try {
-      const newRSVP = await prisma.RSVP.create({
+      const newRSVP = await prisma.rSVP.create({
         data: {
           name,
           pplCount,

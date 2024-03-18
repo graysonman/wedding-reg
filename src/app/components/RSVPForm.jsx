@@ -11,7 +11,7 @@ const RSVPForm = () => {
       return;
     }
     try {
-      const response = await fetch('/wedding-reg/src/app/api/rsvp.jsx', {
+      const response = await fetch('/api/rsvp', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

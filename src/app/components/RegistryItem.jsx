@@ -10,7 +10,7 @@ const RegistryItem = ({ item }) => {
       return;
     }
     try {
-      const response = await fetch('../src/app/api/regItems.jsx', {
+      const response = await fetch('/api/registry', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -22,7 +22,7 @@ const RegistryItem = ({ item }) => {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      await response.json(); // Assuming the response body will be used for something
+      await response.json(); 
       setBuyerFamily('');
       alert('Purchase confirmed!');
     } catch (error) {
