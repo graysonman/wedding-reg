@@ -1,6 +1,4 @@
-// frontend/src/RegistryItem.js
 import React, { useState } from 'react';
-import axios from 'axios';
 
 const RegistryItem = ({ item }) => {
   const [buyerFamily, setBuyerFamily] = useState('');
@@ -12,7 +10,19 @@ const RegistryItem = ({ item }) => {
       return;
     }
     try {
-      await axios.post('/api/registry', { ...item, buyerFamily });
+      const response = await fetch('../src/app/api/regItems.jsx', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ id: item.id, famBought: buyerFamily }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      await response.json(); // Assuming the response body will be used for something
       setBuyerFamily('');
       alert('Purchase confirmed!');
     } catch (error) {
@@ -23,8 +33,8 @@ const RegistryItem = ({ item }) => {
 
   return (
     <div>
-      <img src={item.imageUrl} alt={item.title} style={{ width: '100px', height: '100px' }} />
-      <a href={item.link} target="_blank" rel="noopener noreferrer">{item.title}</a>
+      <img src={item.img} alt={item.name} style={{ width: '100px', height: '100px' }} />
+      <a href={item.link} target="_blank" rel="noopener noreferrer">{item.name}</a>
       <form onSubmit={handlePurchase}>
         <input
           type="text"

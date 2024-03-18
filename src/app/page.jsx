@@ -1,16 +1,16 @@
 'use client'
-import { useClientEffect } from 'next/client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import RSVPForm from '../../components/RSVPForm';
 import RegistryItem from '../../components/RegistryItem';
+
 
 export default function Page() {
   const [registryItems, setRegistryItems] = useState([]);
 
-  useClientEffect(() => {
+  useEffect(() => {
     const fetchRegistryItems = async () => {
       try {
-        const response = await fetch('./api/regItems.js');
+        const response = await fetch('./api/regItems.jsx');
         if (!response.ok) {
           throw new Error(`Error: ${response.statusText}`);
         }
