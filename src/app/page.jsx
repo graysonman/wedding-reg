@@ -4,6 +4,7 @@ import RSVPForm from './components/RSVPForm';
 import RegistryItem from './components/RegistryItem';
 import styles from './styles.module.css';
 import './global.css'
+import bg from './images/background1.jpg'
 
 
 export default function Page() {
@@ -27,6 +28,11 @@ export default function Page() {
   }, []);
 
   return (
+    <body style={{
+      backgroundImage: `url(${bg.src})`,
+      backgroundAttachment: 'fixed',
+      
+    }}> 
     <div className={styles.App}>
       <h1>Welcome to Our Wedding</h1>
       <RSVPForm />
@@ -42,5 +48,6 @@ export default function Page() {
       </div>
       </div>
     </div>
+    </body>
   );
 }
