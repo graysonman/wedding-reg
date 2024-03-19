@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import styles from '../styles.module.css';
+import '../global.css'
 
 const RSVPForm = () => {
   const [familyName, setFamilyName] = useState('');
@@ -34,10 +36,13 @@ const RSVPForm = () => {
   };
 
   return (
-    <div>
+    <div className={styles.rsvpFormContainer}>
+      
       <h2>RSVP for Our Wedding</h2>
+      <div className=''>
       <form onSubmit={handleSubmit}>
         <input
+          className={styles.rsvpInput}
           type="text"
           value={familyName}
           onChange={(e) => setFamilyName(e.target.value)}
@@ -45,14 +50,16 @@ const RSVPForm = () => {
           required
         />
         <input
+          className={styles.rsvpInput}
           type="number"
           value={peopleCount}
           onChange={(e) => setPeopleCount(e.target.value)}
           placeholder="Number of People"
           required
         />
-        <button type="submit">Submit RSVP</button>
+        <button className={styles.rsvpSubmit} type="submit">Submit RSVP</button>
       </form>
+      </div>
     </div>
   );
 };

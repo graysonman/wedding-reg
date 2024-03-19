@@ -3,7 +3,11 @@ import prisma from '../../../../lib/prisma';
 
 export async function GET() {
   try {
-    const registryItems = await prisma.registry.findMany();
+    const registryItems = await prisma.registry.findMany({
+      orderBy:{
+        bought: 'asc'
+      }
+    });
     return NextResponse.json(registryItems);
   } catch (error) {
     return NextResponse.json(

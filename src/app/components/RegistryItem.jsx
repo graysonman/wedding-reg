@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import styles from '../style.css';
+import styles from '../styles.module.css';
+import '../global.css'
 
 const RegistryItem = ({ item }) => {
   const [buyerFamily, setBuyerFamily] = useState('');
@@ -25,7 +26,7 @@ const RegistryItem = ({ item }) => {
       }
 
       await response.json();
-      setIsPurchased(true);
+      setIsPurchased(true); // Update state to reflect purchase
       setBuyerFamily('');
       alert('Purchase confirmed!');
     } catch (error) {
@@ -34,14 +35,11 @@ const RegistryItem = ({ item }) => {
     }
   };
 
-  const purchasedStyle = {
-    pointerEvents: isPurchased ? 'none' : 'auto',
-    opacity: isPurchased ? 0.5 : 1,
-  };
+  const itemClasses = `${styles.registryItem} ${isPurchased ? styles.grayout : ''}`;
 
   return (
-    <div className={styles.itemContainer} style={purchasedStyle}>
-      <img src={item.img} alt={item.name} style={{ width: '100px', height: '100px' }} />
+    <div className={itemClasses}>
+      <img className={styles.itemImage} src={item.img} alt={item.name}  />
       {isPurchased ? (
         <span className={styles.itemName}>{item.name}</span>
       ) : (
@@ -52,13 +50,14 @@ const RegistryItem = ({ item }) => {
       {!isPurchased && (
         <form onSubmit={handlePurchase}>
           <input
+            className={styles.regInput}
             type="text"
             value={buyerFamily}
             onChange={(e) => setBuyerFamily(e.target.value)}
             placeholder="Family Name"
             required
           />
-          <button type="submit">Confirm Purchase</button>
+          <button className={styles.regSubmit} type="submit">Confirm Purchase</button>
         </form>
       )}
     </div>
