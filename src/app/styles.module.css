@@ -18,7 +18,7 @@
 
 .rsvpInput{
   padding: 5px;
-  margin: 0 5px;
+  margin: 2px 5px;
   font-family: 'Goudy Bookletter 1911', Georgia, Times, serif;
   border-radius:2em;
   border-color: rgb(255, 240, 240);
@@ -26,7 +26,7 @@
 
 .rsvpSubmit {
   padding: 5px;
-  margin: 0 5px;
+  margin: 2px 5px;
   font-family: 'Goudy Bookletter 1911', Georgia, Times, serif;
   border-radius:2em;
   background-color: #f45162;
