@@ -31,7 +31,7 @@ export default function Page() {
       <h1>Welcome to Our Wedding</h1>
       <RSVPForm />
       <div className={styles.textArea}>
-        <h3>We will be moving in with my parents so the registry is small. </h3>
+        <h3>We will be moving in with my parents so the registry is small. <br/>Cash gifts towards the honeymoon is appreciated. </h3>
       </div>
       <div>
         <h2>Registry Items</h2>
