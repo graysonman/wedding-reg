@@ -1,32 +1,41 @@
-/* style.css */
 .App {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  max-width: 500px;
+  max-width: 800px;
   align-items: center;
   gap: 20px;
-  background-color: rgb(235, 235, 235);
+  background-color: rgb(255, 240, 240);
   flex-shrink: 1;
-  max-width: 800px;
   border-radius:4em;
 }
 
-/* Flexbox container for form */
 .rsvpFormContainer {
   display: flex;
   gap: 10px;
+  
 }
 
-/* Styles for RSVP inputs and button */
-.rsvpInput, .rsvpSubmit {
+.rsvpInput{
   padding: 5px;
   margin: 0 5px;
+  font-family: 'Goudy Bookletter 1911', Georgia, Times, serif;
+  border-radius:2em;
+  border-color: rgb(255, 240, 240);
+}
+
+.rsvpSubmit {
+  padding: 5px;
+  margin: 0 5px;
+  font-family: 'Goudy Bookletter 1911', Georgia, Times, serif;
+  border-radius:2em;
+  background-color: #f45162;
+  border-color: #f45162;
 }
 
 .textArea {
   text-align: center;
-  margin: 20px 0;
+  margin: 5px 0px;
 }
 
 .registryItemList {
@@ -40,24 +49,41 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid #ccc;
+  border: 1px solid #000000;
   padding: 10px;
   gap: 10px;
+  border-radius:3em;
 }
 
-.regInput, .regSubmit {
+.regInput{
   padding: 10px;
-  margin: 0 5px;
+  margin: 5px 5px;
+  font-family: 'Goudy Bookletter 1911', Georgia, Times, serif;
+  border-radius:3em;
+  border-color: rgb(255, 240, 240);
+}
+
+.regSubmit {
+  padding: 10px;
+  margin: 5px 5px;
+  font-family: 'Goudy Bookletter 1911', Georgia, Times, serif;
+  border-radius:3em;
+  background-color: #f45162;
+  border-color: #f45162;
 }
 
 .itemImage {
   width: 100px; /* Adjust as needed */
   height: 100px; /* Adjust as needed */
+  border-radius:1em;
 }
 
 .itemLink, .itemName {
   flex-grow: 1;
-  margin: 0 10px;
+  margin: 0px 10px;
+  color: black;
+  text-decoration: none;
+  font-family: 'Goudy Bookletter 1911', Georgia, Times, serif;
 }
 
 /* Styles for when an item is purchased */

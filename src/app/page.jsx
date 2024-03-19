@@ -5,6 +5,8 @@ import RegistryItem from './components/RegistryItem';
 import styles from './styles.module.css';
 import './global.css'
 import bg from './images/background1.jpg'
+import Image from 'next/image'
+import us from "./images/us.jpg"
 
 
 export default function Page() {
@@ -34,7 +36,17 @@ export default function Page() {
       
     }}> 
     <div className={styles.App}>
-      <h1>Welcome to Our Wedding</h1>
+      <header>
+        <Image
+        src={us}
+        width={325}
+        height={400}
+        alt="Grayson and Aimee"
+        quality={100}
+        style={{borderRadius:'2em'}}
+        />
+      <h1>Grayson and Aimee</h1>
+      </header>
       <RSVPForm />
       <div className={styles.textArea}>
         <h3>We will be moving in with my parents so the registry is small. <br/>Cash gifts towards the honeymoon is appreciated. </h3>
