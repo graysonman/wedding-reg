@@ -73,8 +73,8 @@
 }
 
 .itemImage {
-  width: 100px; /* Adjust as needed */
-  height: 100px; /* Adjust as needed */
+  width: 100px; 
+  height: 100px; 
   border-radius:1em;
 }
 
@@ -86,14 +86,12 @@
   font-family: 'Goudy Bookletter 1911', Georgia, Times, serif;
 }
 
-/* Styles for when an item is purchased */
 .grayout {
   filter: grayscale(100%);
   opacity: 0.5;
-  pointer-events: none; /* disables interactions */
+  pointer-events: none; 
 }
 
-/* For purchased items */
 .purchasedForm {
   display: none;
 }

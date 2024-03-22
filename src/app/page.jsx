@@ -50,9 +50,12 @@ export default function Page() {
       <RSVPForm />
       <div className={styles.textArea}>
         <h3>We will be moving in with my parents so the registry is small. <br/>Cash gifts towards the honeymoon are appreciated. </h3>
+        <br/>
+        <h3 className={styles.textArea}>To contribute to more expensive items: <br/>Venmo: @graysonman <br/> Zelle: 925-771-9042</h3>
       </div>
       <div>
-        <h2>Registry Items</h2>
+        <h2>Registry Items:</h2>
+        
         <div className={styles.registryItemList}>
         {registryItems.map((item) => (
           <RegistryItem key={item.id} item={item} />
