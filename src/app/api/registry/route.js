@@ -20,7 +20,7 @@ export async function GET() {
 }
 
 export async function POST(req) {
-  const { id, famBought } = await req.json(); // Assuming JSON payload
+  const { id, famBought } = await req.json(); 
   try {
     const registryItem = await prisma.registry.update({
       where: { id },

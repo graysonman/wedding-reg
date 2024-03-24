@@ -4,7 +4,7 @@ import '../global.css'
 
 const RegistryItem = ({ item }) => {
   const [buyerFamily, setBuyerFamily] = useState('');
-  const [isPurchased, setIsPurchased] = useState(item.bought); // Added state to track purchase status
+  const [isPurchased, setIsPurchased] = useState(item.bought);
 
   const handlePurchase = async (e) => {
     e.preventDefault();
@@ -26,7 +26,7 @@ const RegistryItem = ({ item }) => {
       }
 
       await response.json();
-      setIsPurchased(true); // Update state to reflect purchase
+      setIsPurchased(true); 
       setBuyerFamily('');
       alert('Purchase confirmed!');
     } catch (error) {
