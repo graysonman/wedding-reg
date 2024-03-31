@@ -39,7 +39,9 @@ const RegistryItem = ({ item }) => {
 
   return (
     <div className={itemClasses}>
-      <img className={styles.itemImage} src={item.img} alt={item.name}  />
+      <a href={item.link} target="_blank"rel="noopener noreferrer">
+        <img className={styles.itemImage} src={item.img} alt={item.name}  />
+      </a>
       {isPurchased ? (
         <span className={styles.itemName}>{item.name}</span>
       ) : (
