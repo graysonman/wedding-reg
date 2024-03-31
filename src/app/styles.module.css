@@ -48,6 +48,7 @@
 .registryItem {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
   border: 1px solid #000000;
   padding: 10px;
